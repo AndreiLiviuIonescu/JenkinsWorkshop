@@ -12,6 +12,9 @@ pipeline {
             }
         }
         stage('Execute shell') {
+            agent {
+                label 'built-in'
+            }
             steps {
                 sh 'ls'
                 sh 'chmod -x HelloWorld.sh'
