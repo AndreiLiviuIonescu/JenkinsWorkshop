@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy'){
             when {
-                testArg 'Prod'
+                branch 'Prod'
             }
             steps {
                 echo 'Deploying'
