@@ -21,6 +21,14 @@ pipeline {
                 sh './HelloWorld.sh'
             }
         }
+        stage('Deploy'){
+            when {
+                branch 'prod'
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
         stage('Clean Workspace') {
             steps {
                 cleanWs()
